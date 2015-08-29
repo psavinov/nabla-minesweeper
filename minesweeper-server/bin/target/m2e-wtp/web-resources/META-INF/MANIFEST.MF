@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Head
+Build-Jdk: 1.8.0_40
+Specification-Title: Nabla Minesweeper server
+Specification-Version: 0.0.1-SNAPSHOT
+Implementation-Title: Nabla Minesweeper server
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: ru.nabla.minesweeper
+Created-By: Maven Integration for Eclipse
+
