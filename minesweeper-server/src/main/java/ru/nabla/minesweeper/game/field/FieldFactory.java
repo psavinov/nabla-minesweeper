@@ -14,14 +14,16 @@ public class FieldFactory {
 			throw new IllegalArgumentException("Incorrect mines count!");
 			}
 		Field field = new Field(width, height);
+		field.setCoinCount(coinsCount);
+		field.setMineCount(minesCount);
 
 		/*Раскладываем мины*/
 		int k=minesCount;
 		while (k>0) {
 			int i= new Random().nextInt(width);
 			int j= new Random().nextInt(height);
-			if (field.getPointState(i,j) == FieldPointState.CLEAR){
-			    field.setPointState(i, j, FieldPointState.MINE);
+			if (field.getPoints()[i][j].getState() == FieldPointState.CLEAR){
+			    field.getPoints()[i][j].setState(FieldPointState.MINE);
 				k--;
 			}
 		}
@@ -31,8 +33,8 @@ public class FieldFactory {
 		while (k>0) {
 			int i= new Random().nextInt(width);
 			int j= new Random().nextInt(height);
-			if (field.getPointState(i,j) == FieldPointState.CLEAR){
-			    field.setPointState(i, j, FieldPointState.COIN);
+			if (field.getPoints()[i][j].getState() == FieldPointState.CLEAR){
+			    field.getPoints()[i][j].setState(FieldPointState.COIN);
 				k--;
 			}
 		}
